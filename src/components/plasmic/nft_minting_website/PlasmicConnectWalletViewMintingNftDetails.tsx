@@ -61,6 +61,8 @@ import { CopyIcon } from "suinova-nft-builder/dist/index.js";
 import { UserIcon } from "suinova-nft-builder/dist/index.js";
 import { LogoutIcon } from "suinova-nft-builder/dist/index.js";
 import { AntdAvatar } from "@plasmicpkgs/antd5/skinny/registerAvatar";
+import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdTabs } from "@plasmicpkgs/antd5/skinny/registerTabs";
 import { AntdTabItem } from "@plasmicpkgs/antd5/skinny/registerTabs";
 import { AntdSteps } from "@plasmicpkgs/antd5/skinny/registerSteps";
@@ -93,8 +95,7 @@ export type PlasmicConnectWalletViewMintingNftDetails__OverridesType = {
   root?: Flex__<"div">;
   svg?: Flex__<"svg">;
   walletIcon?: Flex__<typeof WalletIcon>;
-  sub?: Flex__<"sub">;
-  button?: Flex__<"button">;
+  input?: Flex__<typeof AntdInput>;
   tabs?: Flex__<typeof AntdTabs>;
   steps2?: Flex__<typeof AntdSteps>;
 };
@@ -132,6 +133,8 @@ function PlasmicConnectWalletViewMintingNftDetails__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const $globalActions = useGlobalActions?.();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -244,6 +247,14 @@ function PlasmicConnectWalletViewMintingNftDetails__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "input.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "1",
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -633,7 +644,8 @@ function PlasmicConnectWalletViewMintingNftDetails__RenderFunc(props: {
                       {(() => {
                         try {
                           return (
-                            !$state.isWhitelistFull && $state.isJoinWhitelist
+                            // !$state.isWhitelistFull && $state.isJoinWhitelist
+                            false
                           );
                         } catch (e) {
                           if (e instanceof TypeError) {
@@ -786,10 +798,8 @@ function PlasmicConnectWalletViewMintingNftDetails__RenderFunc(props: {
                       })() ? (
                         <Stack__
                           as={"sub"}
-                          data-plasmic-name={"sub"}
-                          data-plasmic-override={overrides.sub}
                           hasGap={true}
-                          className={classNames(projectcss.all, sty.sub)}
+                          className={classNames(projectcss.all, sty.sub__sej4V)}
                         >
                           <div
                             className={classNames(
@@ -1045,6 +1055,441 @@ function PlasmicConnectWalletViewMintingNftDetails__RenderFunc(props: {
                       {(() => {
                         try {
                           return (
+                            $state.whitelistTimerId > 0 ||
+                            $state.isJoinWhitelist
+                          );
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__kdfyg
+                          )}
+                        >
+                          {(() => {
+                            try {
+                              return true;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___8TUlC
+                              )}
+                            >
+                              {"Whitelist Minting"}
+                            </div>
+                          ) : null}
+                          {(() => {
+                            try {
+                              return true;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__aGjb5
+                              )}
+                            >
+                              {"Whitelisted members can now mint the nfts"}
+                            </div>
+                          ) : null}
+                          {(() => {
+                            try {
+                              return true;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__alrXv
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__hXiP
+                                )}
+                              >
+                                {"ENDS IN"}
+                              </div>
+                              {(() => {
+                                try {
+                                  return true;
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })() ? (
+                                <Stack__
+                                  as={"sub"}
+                                  hasGap={true}
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.sub__ecnEt
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox__ecozs
+                                    )}
+                                  >
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text___5AvKh
+                                      )}
+                                    >
+                                      {""}
+                                    </div>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__xEhGy
+                                      )}
+                                    >
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return String(
+                                              $state.countDownInfo.whitelist
+                                                .day || 0
+                                            ).padStart(2, "0");
+                                          } catch (e) {
+                                            if (e instanceof TypeError) {
+                                              return "01";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    </div>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__jBqh6
+                                      )}
+                                    >
+                                      {"day"}
+                                    </div>
+                                  </div>
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox___7FUz2
+                                    )}
+                                  >
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__rUdGi
+                                      )}
+                                    >
+                                      {""}
+                                    </div>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__bYuv8
+                                      )}
+                                    >
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return String(
+                                              $state.countDownInfo.whitelist
+                                                .hour || 0
+                                            ).padStart(2, "0");
+                                          } catch (e) {
+                                            if (e instanceof TypeError) {
+                                              return "01";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    </div>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__vvrGs
+                                      )}
+                                    >
+                                      {"hour"}
+                                    </div>
+                                  </div>
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox___6OkBz
+                                    )}
+                                  >
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__eK46S
+                                      )}
+                                    >
+                                      {""}
+                                    </div>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__jrwif
+                                      )}
+                                    >
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return String(
+                                              $state.countDownInfo.whitelist
+                                                .minute || 0
+                                            ).padStart(2, "0");
+                                          } catch (e) {
+                                            if (e instanceof TypeError) {
+                                              return "01";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    </div>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__usozW
+                                      )}
+                                    >
+                                      {"minute"}
+                                    </div>
+                                  </div>
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox__jO6H4
+                                    )}
+                                  >
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text___5GhGj
+                                      )}
+                                    >
+                                      {""}
+                                    </div>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__nNGca
+                                      )}
+                                    >
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return String(
+                                              $state.countDownInfo.whitelist
+                                                .second || 0
+                                            ).padStart(2, "0");
+                                          } catch (e) {
+                                            if (e instanceof TypeError) {
+                                              return "01";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    </div>
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text__cg78U
+                                      )}
+                                    >
+                                      {"second"}
+                                    </div>
+                                  </div>
+                                </Stack__>
+                              ) : null}
+                            </div>
+                          ) : null}
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___0Nx2K
+                            )}
+                          >
+                            {"Mint price"}
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__fM8A
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    (Number(
+                                      $ctx.web3GlobalData.mintingInfo
+                                        .presaleNftPrice
+                                    ) || 15) + " SUI"
+                                  );
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "Mint price";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__oiJdb
+                            )}
+                          >
+                            {"Quantity"}
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__nBqY1
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__wmHp8
+                              )}
+                            >
+                              {(() => {
+                                const child$Props = {
+                                  bordered: false,
+                                  className: classNames(
+                                    "__wab_instance",
+                                    sty.input
+                                  ),
+                                  onChange: async (...eventArgs: any) => {
+                                    generateStateOnChangePropForCodeComponents(
+                                      $state,
+                                      "value",
+                                      ["input", "value"],
+                                      AntdInput_Helpers
+                                    ).apply(null, eventArgs);
+                                  },
+                                  size: "large",
+                                  type: "number",
+                                  value: generateStateValueProp($state, [
+                                    "input",
+                                    "value"
+                                  ])
+                                };
+                                initializeCodeComponentStates(
+                                  $state,
+                                  [
+                                    {
+                                      name: "value",
+                                      plasmicStateName: "input.value"
+                                    }
+                                  ],
+                                  [],
+                                  AntdInput_Helpers ?? {},
+                                  child$Props
+                                );
+
+                                return (
+                                  <AntdInput
+                                    data-plasmic-name={"input"}
+                                    data-plasmic-override={overrides.input}
+                                    {...child$Props}
+                                  />
+                                );
+                              })()}
+                            </div>
+                          </div>
+                          <button
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.button,
+                              projectcss.__wab_text,
+                              sty.button__oCZm
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["invokeGlobalAction"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [undefined, "Minting Successfully"]
+                                    };
+                                    return $globalActions[
+                                      "plasmic-antd5-config-provider.showNotification"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["invokeGlobalAction"] != null &&
+                                typeof $steps["invokeGlobalAction"] ===
+                                  "object" &&
+                                typeof $steps["invokeGlobalAction"].then ===
+                                  "function"
+                              ) {
+                                $steps["invokeGlobalAction"] = await $steps[
+                                  "invokeGlobalAction"
+                                ];
+                              }
+                            }}
+                          >
+                            {"Mint Now"}
+                          </button>
+                        </div>
+                      ) : null}
+                      {(() => {
+                        try {
+                          return (
                             !!$ctx.web3WalletData.walletAddress &&
                             !$state.isJoinWhitelist
                           );
@@ -1056,13 +1501,11 @@ function PlasmicConnectWalletViewMintingNftDetails__RenderFunc(props: {
                         }
                       })() ? (
                         <button
-                          data-plasmic-name={"button"}
-                          data-plasmic-override={overrides.button}
                           className={classNames(
                             projectcss.all,
                             projectcss.button,
                             projectcss.__wab_text,
-                            sty.button
+                            sty.button__wv4Cu
                           )}
                           onClick={async event => {
                             const $steps = {};
@@ -1111,6 +1554,28 @@ function PlasmicConnectWalletViewMintingNftDetails__RenderFunc(props: {
                       ) : null}
                     </div>
                   </Stack__>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__vmIck)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__yktNj
+                      )}
+                    >
+                      {"25 %"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wHo9D
+                      )}
+                    >
+                      {""}
+                    </div>
+                  </div>
                   <AntdTabs
                     data-plasmic-name={"tabs"}
                     data-plasmic-override={overrides.tabs}
@@ -1564,11 +2029,10 @@ Welcome to the Magic Astronauts NFT collection—a mesmerizing fusion of space e
 }
 
 const PlasmicDescendants = {
-  root: ["root", "svg", "walletIcon", "sub", "button", "tabs", "steps2"],
+  root: ["root", "svg", "walletIcon", "input", "tabs", "steps2"],
   svg: ["svg"],
   walletIcon: ["walletIcon"],
-  sub: ["sub"],
-  button: ["button"],
+  input: ["input"],
   tabs: ["tabs", "steps2"],
   steps2: ["steps2"]
 } as const;
@@ -1579,8 +2043,7 @@ type NodeDefaultElementType = {
   root: "div";
   svg: "svg";
   walletIcon: typeof WalletIcon;
-  sub: "sub";
-  button: "button";
+  input: typeof AntdInput;
   tabs: typeof AntdTabs;
   steps2: typeof AntdSteps;
 };
@@ -1655,8 +2118,7 @@ export const PlasmicConnectWalletViewMintingNftDetails = Object.assign(
     // Helper components rendering sub-elements
     svg: makeNodeComponent("svg"),
     walletIcon: makeNodeComponent("walletIcon"),
-    sub: makeNodeComponent("sub"),
-    button: makeNodeComponent("button"),
+    input: makeNodeComponent("input"),
     tabs: makeNodeComponent("tabs"),
     steps2: makeNodeComponent("steps2"),
 

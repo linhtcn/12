@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "inlined",
@@ -179,7 +179,8 @@
           "componentImportPath": "suinova-nft-builder/dist/index.js"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "66MC2d9B7YecVEphuUMtqF",
@@ -579,7 +580,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerConfigProvider"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "gzny5sU7cPH2nhvEqzdB2m",
@@ -789,7 +791,8 @@
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerRate"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "s7EEJcVdeDttPbcVMFDKQR",
